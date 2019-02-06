@@ -1,0 +1,44 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="items" type="List" default="[1, 2, 3]"/>
+    <aura:attribute name="items2" type="List" default="['ゴミ捨てる', '牛乳を買う', '花に水やり']"/>
+    <aura:attribute name="showDialog" type="boolean" default="false"/>
+    
+    <!-- 静的リソースの FontAwesome を読込-->
+    <ltng:require scripts="{!$Resource.ALC_FontAwesome + '/css/font-awesome.css'}" />
+    
+    <!-- html -->
+    <h1>これは Awesome Lightning Community のコンポーネントです</h1>
+    
+    <hr/>
+    <h1>=== 今日の天気 ===</h1><br/>
+    <aura:iteration items="{!v.items}" var="item">
+        2019-02-05 {!item}時の天気: 晴れ &nbsp;&nbsp;
+        
+        <!-- 晴れボタン -->
+        <ui:button aura:id="fine" press="{!c.editStatus}" class="slds-button">
+            <i class="fa fa-sun-o" aria-hidden="true"></i>
+        </ui:button>
+        
+        <!-- 雲または雨ボタン -->
+        <ui:button aura:id="ng" press="{!c.editStatus}" class="slds-button">
+            <i class="fa fa-cloud" aria-hidden="true"></i>
+            &nbsp; or &nbsp;
+            <i class="fa fa-tint" aria-hidden="true"></i>
+        </ui:button><br/><br/>  
+    </aura:iteration>
+    
+    <hr/>
+    <h1>=== 今日の TODO ==</h1><br/>
+    <aura:iteration items="{!v.items2}" var="item2">
+        {!item2} &nbsp;&nbsp;
+        
+        <!-- チェックをつけるボタン -->
+        <ui:button aura:id="rainy" press="{!c.editStatus}" class="slds-button">
+            <i class="fa fa-check" aria-hidden="true"></i>
+        </ui:button><br/><br/>
+    </aura:iteration>
+    
+    <!-- 確認ダイアログ -->
+    <c:ALC_InformationConfirmDlg showDialog="{!v.showDialog}"/>
+    
+</aura:component>
