@@ -1,4 +1,4 @@
-<aura:component >
+<aura:component extensible="true">
     <!-- attribute -->
     <aura:attribute name="showDialog" type="boolean" default="false"/>
 
@@ -14,7 +14,7 @@
                 </header>
                 
                 <div class="slds-modal__content slds-p-around_medium">
-                    <div>本当によろしいですか？</div>
+                    <div>{!v.body}</div>
                 </div>
                 <footer class="slds-modal__footer">
                     <button class="slds-button slds-button_neutral" onclick="{!c.cancelIt}">Cancel</button>

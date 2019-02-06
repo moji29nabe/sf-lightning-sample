@@ -1,0 +1,3 @@
+<aura:component extends="c:ALC_AbstConfirmDlg">
+    <div>この時間の天気を変更します。本当によろしいですか?</div>
+</aura:component>
