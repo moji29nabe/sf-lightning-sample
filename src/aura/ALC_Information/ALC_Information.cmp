@@ -1,4 +1,4 @@
-<aura:component implements="forceCommunity:availableForAllPageTypes">
+<aura:component implements="flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes">
     <aura:attribute name="items" type="List" default="[1, 2, 3]"/>
     <aura:attribute name="items2" type="List" default="['ゴミ捨てる', '牛乳を買う', '花に水やり']"/>
     <aura:attribute name="showWeatherDialog" type="boolean" default="false"/>
